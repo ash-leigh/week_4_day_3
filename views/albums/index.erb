@@ -1,0 +1,9 @@
+<h2>Albums</h2>
+
+<% @albums.each do |album| %>
+ <div class="order">
+ <b>Name:</b>
+ <p><%= album.name()%> by <%= album.artist.name()%></p>
+ <a href="/albums/<%= album.id%>">View album</a>
+ </div>
+<%end%>
