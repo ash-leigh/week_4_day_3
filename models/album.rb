@@ -51,4 +51,11 @@ class Album
     run_sql(sql)
   end
 
+  def self.search(name)
+    sql = "SELECT * FROM albums WHERE name = '#{name}'"
+    albums = run_sql(sql)
+    results = albums.map{|album| Album.new(album)}
+    return results
+  end
+
 end

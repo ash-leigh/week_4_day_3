@@ -1,13 +1,8 @@
 
-<% @artists.each do |artist| %>
 <div class="order">
- <b>Name:</b>
- <p><%= artist.name()%></p>
 
- <% albums = artist.albums() %>
- <% albums.each do |album|%>
- <%= album.name%>
+ <% @albums.each do |album|%>
+ <%= album.name%> - Artist's name: <%= album.artist.name %>
  <br>
- <%end%>
 </div>
 <%end%>

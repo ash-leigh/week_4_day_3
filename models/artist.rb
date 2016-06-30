@@ -48,4 +48,11 @@ class Artist
        
     run_sql(sql)
   end
+
+  def self.search(name)
+    sql = "SELECT * FROM artists WHERE name = '#{name}'"
+    artists = run_sql(sql)
+    results = artists.map{|artist| Artist.new(artist)}
+    return results
+  end
 end
